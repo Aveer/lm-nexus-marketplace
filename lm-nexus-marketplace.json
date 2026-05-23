@@ -3,5 +3,70 @@
   "marketplace_id": "lm-nexus.community",
   "display_name": "LM-Nexus Marketplace",
   "description": "Open GitHub-based marketplace index for LM-Nexus modules.",
-  "packages": []
+  "packages": [
+    {
+      "package_id": "nexus.module.example-greeter",
+      "name": "Example Greeter Module",
+      "description": "Safe full-stack fixture package demonstrating LM-Nexus backend activation and generated-bundle frontend metadata.",
+      "latest_version": "0.1.0",
+      "tags": ["example", "fixture", "generated-bundle"],
+      "source_url": "https://github.com/Aveer/LM-Nexus",
+      "homepage_url": "https://github.com/Aveer/lm-nexus-marketplace",
+      "repository_url": "https://github.com/Aveer/LM-Nexus",
+      "license": "MIT",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "module_ids": ["nexus.module.example-greeter"],
+          "archive_url": "https://github.com/Aveer/lm-nexus-marketplace/releases/download/example-greeter-v0.1.0/example-greeter-0.1.0.zip",
+          "sha256": "cb6391a4725c42deb8f74f737834fe0323c5464c127f6374a982d98728aa3611",
+          "manifest_path": "nexus.module.json",
+          "dependencies": [
+            {
+              "id": "nexus.module.core-app-shell",
+              "reason": "Package requires the core LM-Nexus shell."
+            }
+          ],
+          "optional_dependencies": [
+            {
+              "id": "nexus.module.quick-links",
+              "integrationLabel": "Quick Links shortcut"
+            }
+          ],
+          "permissions": [
+            {
+              "id": "example-greeter.read",
+              "label": "Read greeting configuration",
+              "risk": "low",
+              "reason": "Displays static greeting preferences."
+            }
+          ],
+          "compatibility": {
+            "minNexusVersion": "0.0.0",
+            "platforms": ["linux", "wsl", "windows"],
+            "backendCapabilities": ["installed-router-entry-points"],
+            "frontendCapabilities": ["generated-bundle"]
+          },
+          "backend": {
+            "entryPoints": {
+              "routers": [
+                {
+                  "id": "greeter-api",
+                  "moduleId": "nexus.module.example-greeter",
+                  "path": "backend/api.py",
+                  "attribute": "router",
+                  "prefix": "/api/installed/nexus.module.example-greeter",
+                  "tags": ["example-greeter"]
+                }
+              ]
+            }
+          },
+          "frontend": {
+            "activation": "requires-bundle-generation",
+            "manifestPath": "frontend/manifest.ts"
+          }
+        }
+      ]
+    }
+  ]
 }
