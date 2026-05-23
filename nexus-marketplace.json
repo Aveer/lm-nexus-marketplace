@@ -1,7 +1,0 @@
-{
-  "schema_version": 1,
-  "marketplace_id": "aveer.nexus-module-marketplace",
-  "display_name": "Aveer Nexus Module Marketplace",
-  "description": "Open GitHub-based module marketplace for Nexus/LM-Nexus modules.",
-  "packages": []
-}

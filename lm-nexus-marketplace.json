@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "marketplace_id": "lm-nexus.community",
+  "display_name": "LM-Nexus Marketplace",
+  "description": "Open GitHub-based marketplace index for LM-Nexus modules.",
+  "packages": []
+}
